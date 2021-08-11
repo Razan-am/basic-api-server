@@ -1,5 +1,5 @@
 
-# Lab: Class 02
+# Lab: Class 03
 
 ## basic-api-server
 
