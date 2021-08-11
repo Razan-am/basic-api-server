@@ -31,13 +31,13 @@ async function getOneRecord(req,res){
   res.status(200).json(getOne);
 }
 
-async function createRecord(req,res){
-  let newFood = req.body;
-  console.log(Food);
-  let creatFood = await Food.create(newFood);
-  res.status(200).json(creatFood);
+// async function createRecord(req,res){
+//   let newFood = req.body;
+//   console.log(Food);
+//   let creatFood = await Food.create(newFood);
+//   res.status(200).json(creatFood);
 
-}
+// }
 
 async function updateRecord(req,res){
   let id = parseInt(req.params.id);
