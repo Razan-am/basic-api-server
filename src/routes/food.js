@@ -13,11 +13,11 @@ router.get ('/status',(req,res)=>{
 });
 
 router.get('/food',getAllRecords);
-router.get('/food/:id',getOneRecord);
+router.get('/food/:1',getOneRecord);
 
 router.post('/food',createRecord);
-router.put('/food/:id',updateRecord);
-router.delete('/food/:id',deleteRecord);
+router.put('/food/:1',updateRecord);
+router.delete('/food/:1',deleteRecord);
 
 
 async function getAllRecords(req,res){
