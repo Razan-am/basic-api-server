@@ -4,6 +4,14 @@ const express = require ('express');
 const router = express.Router();
 const {Food} = require('../models/index');
 
+router.get ('/status',(req,res)=>{
+  res.send({
+    domain:'https://basic-express-ser.herokuapp.com/',
+    status:'running',
+    port:'3000',
+  });
+});
+
 router.get('/food',getAllRecords);
 router.get('/food/:id',getOneRecord);
 
@@ -19,7 +27,7 @@ async function getAllRecords(req,res){
 
 async function getOneRecord(req,res){
   let id =  parseInt(req.params.id);
-  let getOne = await Food.findOne({ where: {id:id}});
+  let getOne = await Food.findOne({ where: {id:1}});
   res.status(200).json(getOne);
 }
 
@@ -34,14 +42,14 @@ async function createRecord(req,res){
 async function updateRecord(req,res){
   let id = parseInt(req.params.id);
   let obj = req.body;
-  let findFood =  await Food.findOne({ where: {id:id}});
+  let findFood =  await Food.findOne({ where: {id:1}});
   let updateFood = await findFood.update(obj);
   res.status(200).json(updateFood);
 }
 
 async function deleteRecord(req,res){
   let id = parseInt(req.params.id);
-  let deleteFood = await Food.destroy({where: {id:id}});
+  let deleteFood = await Food.destroy({where: {id:1}});
   res.status(200).json(deleteFood);
 }
 
