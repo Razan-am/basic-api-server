@@ -26,7 +26,7 @@
 - Unit Tests: npm run test
 
 ### UML
-![status](./images/uml.png)
+![status](/images/uml.png)
 
 ### Notes
 - pull request : https://github.com/Razan-am/basic-express-server/pull/2

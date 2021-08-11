@@ -6,18 +6,18 @@ const {Food} = require('../models/index');
 
 router.get ('/status',(req,res)=>{
   res.send({
-    domain:'https://basic-express-ser.herokuapp.com/',
+    domain:'https://basic-api-ser.herokuapp.com/',
     status:'running',
     port:'3000',
   });
 });
 
 router.get('/food',getAllRecords);
-router.get('/food/:1',getOneRecord);
+router.get('/food/1',getOneRecord);
 
 router.post('/food',createRecord);
-router.put('/food/:1',updateRecord);
-router.delete('/food/:1',deleteRecord);
+router.put('/food/1',updateRecord);
+router.delete('/food/1',deleteRecord);
 
 
 async function getAllRecords(req,res){
@@ -31,13 +31,13 @@ async function getOneRecord(req,res){
   res.status(200).json(getOne);
 }
 
-// async function createRecord(req,res){
-//   let newFood = req.body;
-//   console.log(Food);
-//   let creatFood = await Food.create(newFood);
-//   res.status(200).json(creatFood);
+async function createRecord(req,res){
+  let newFood = req.body;
+  console.log(Food);
+  let creatFood = await Food.create(newFood);
+  res.status(200).json(creatFood);
 
-// }
+}
 
 async function updateRecord(req,res){
   let id = parseInt(req.params.id);
