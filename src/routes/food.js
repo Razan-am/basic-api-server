@@ -13,11 +13,11 @@ router.get ('/status',(req,res)=>{
 });
 
 router.get('/food',getAllRecords);
-router.get('/food/1',getOneRecord);
+router.get('/food/:id',getOneRecord);
 
 router.post('/food',createRecord);
-router.put('/food/1',updateRecord);
-router.delete('/food/1',deleteRecord);
+router.put('/food/:id',updateRecord);
+router.delete('/food/:id',deleteRecord);
 
 
 async function getAllRecords(req,res){
@@ -27,7 +27,7 @@ async function getAllRecords(req,res){
 
 async function getOneRecord(req,res){
   let id =  parseInt(req.params.id);
-  let getOne = await Food.findOne({ where: {id:1}});
+  let getOne = await Food.findOne({ where: {id:id}});
   res.status(200).json(getOne);
 }
 
@@ -42,14 +42,14 @@ async function createRecord(req,res){
 async function updateRecord(req,res){
   let id = parseInt(req.params.id);
   let obj = req.body;
-  let findFood =  await Food.findOne({ where: {id:1}});
+  let findFood =  await Food.findOne({ where: {id:id}});
   let updateFood = await findFood.update(obj);
   res.status(200).json(updateFood);
 }
 
 async function deleteRecord(req,res){
   let id = parseInt(req.params.id);
-  let deleteFood = await Food.destroy({where: {id:1}});
+  let deleteFood = await Food.destroy({where: {id:id}});
   res.status(200).json(deleteFood);
 }
 
