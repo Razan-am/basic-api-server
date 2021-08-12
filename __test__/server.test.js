@@ -20,10 +20,14 @@ describe('My API server',()=>{
     expect(response.status).toEqual(404);
   });
   
-  //   it('Create a record using POST',async()=>{
-  //     const response = await request.post('/food');
-  //     expect(response.status).toEqual(200);
-  //   });
+  it('Create a record using POST',async()=>{
+    let newFood={
+      foodType:'fast food',
+      foodName: 'pizza',
+    };
+    const response = await request.post('/food').send(newFood);
+    expect(response.status).toEqual(200);
+  });
 
   it('Read a list of records using GET',async()=>{
     const response = await request.get('/food');
@@ -36,7 +40,12 @@ describe('My API server',()=>{
   });
 
   it('Update a record using PUT',async()=>{
-    const response = await request.get('/food/1');
+    let obj = {
+      id:1,
+      foodType:'fast food',
+      foodName: 'pizza',
+    };
+    const response = await request.get('/food/1').send(obj);
     expect(response.status).toEqual(200);
   });
 
