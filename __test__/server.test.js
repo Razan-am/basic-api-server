@@ -50,7 +50,7 @@ describe('My API server',()=>{
   });
 
   it('Destroy a record using DELETE',async()=>{
-    const response = await request.get('/food/1');
-    expect(response.status).toEqual(200);
+    const response = await request.delete('/food/1');
+    expect(response.status).toEqual(204);
   });
 });

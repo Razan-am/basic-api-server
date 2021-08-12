@@ -50,7 +50,7 @@ async function updateRecord(req,res){
 async function deleteRecord(req,res){
   let id = parseInt(req.params.id);
   let deleteFood = await Food.destroy({where: {id:id}});
-  res.status(200).json(deleteFood);
+  res.status(204).json(deleteFood);
 }
 
 module.exports =router;
