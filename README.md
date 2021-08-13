@@ -1,5 +1,5 @@
 
-# Lab: Class 02
+# Lab: Class 03
 
 ## basic-api-server
 
@@ -7,8 +7,11 @@
 - https://basic-express-ser.herokuapp.com/
 
 ### Author: Razan Alamleh
- - [tese report](https://github.com/Razan-am/basic-express-server/runs/3280579477?check_suite_focus=true)
- - [front end](https://basic-express-ser.herokuapp.com/status)
+ - test report:
+
+    ![status](./images/test.PNG)
+
+
 
 ### Setup
 - .env requirements
